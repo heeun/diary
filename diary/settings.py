@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'sk*aqh-fw3)2$1kd%*sl1imeib^+-z!1*3rzs8dr-0@l_)#%t4')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sk*aqh-fw3)2$1kd%*sl1imeib^+-z!1*3rzs8dr-0@l_)#%t4'
+#SECRET_KEY = 'sk*aqh-fw3)2$1kd%*sl1imeib^+-z!1*3rzs8dr-0@l_)#%t4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
